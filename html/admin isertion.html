@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<title>Admin-Subscriber...</title> 
+<script language="javascript" src="js\gen_validator.js"></script> 
+<link rel="stylesheet" type="text/css" href="css\class.css"/> 
+</head> 
+<body> 
+<form name="movie" action="admin-sub1.jsp" method="get"> 
+<jsp:include page="Header.jsp"></jsp:include> 
+<center> 
+<h2>Admin & Subscriber Insertion!</h2><br/><br/> 
+<p align="center"> 
+<table border="1" cellpadding="4" cellspacing="3" style="border-collapse: collapse"> 
+<tr> 
+<td>Subscriber Id:</td> 
+<td><input type="text" value="" name="sid" size="25" tabindex="1"/></td> 
+</tr> 
+<tr> 
+<td>Subscriber First Name:</td> 
+<td><input type="text" value="" name="fname"size="25" tabindex="2"/></td> 
+</tr> 
+<tr> 
+<td>Subscriber Last name:</td> 
+<td><input type="text" value="" name="lname"size="25"  tabindex="3"/></td> 
+</tr> 
+<tr> 
+<td>Subscriber Login ID:</td> 
+<td><input type="text" value="" name="sloginid"size="25"  tabindex="4"/></td> 
+</tr> 
+<tr> 
+<td>Subscriber Password:</td> 
+<td><input type="text" value="" name="spass"size="25"  tabindex="5"/></td> 
+</tr> 
+<tr> 
+<td></td> 
+<td align="center"><input type="submit" value="Submit" tabindex="9"></input> 
+<input type="reset" value="Reset" tabindex="10"></input></td> 
+</tr> 
+</table> 
+</p> 
+</center> 
+<jsp:include page="Footer.jsp"></jsp:include> 
+</form> 
+<!-- java Script begins --> 
+<script language="JavaScript" type="text/javascript"> 
+var frmvalidator  = new Validator("movie"); 
+frmvalidator.addValidation("sid","req", "Subscriber ID can't be left blank"); 
+frmvalidator.addValidation("sid","numeric","Subscriber ID should be in numeric"); 
+frmvalidator.addValidation("fname","req", "First Name can't be left blank"); 
+frmvalidator.addValidation("fname","alphabetic", "First Name should have alphabetic 
+characters."); 
+frmvalidator.addValidation("lname","req", "Last Name can't be left blank"); 
+frmvalidator.addValidation("lname","alphabetic", "Last Name should have alphabetic 
+characters."); 
+frmvalidator.addValidation("sloginid","req", "Login ID can't be left blank"); 
+frmvalidator.addValidation("sloginid","alphabetic", "Login ID should have alphabetic 
+characters."); 
+frmvalidator.addValidation("spass","req", "Password can't be left blank"); 
+frmvalidator.addValidation("spass","alphabetic", "Password should have alphabetic 
+characters."); 
+</script> 
+</body> 
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<title>Feedback Form</title> 
+<script language="javascript" src="js\gen_validator.js"></script> 
+<link rel="stylesheet" type="text/css" href="css\class.css"/> 
+</head> 
+<body> 
+<form name="feedback" action="FeedbackProcess.jsp" method="get"> 
+<jsp:include page="Header.jsp"></jsp:include> 
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome Users!</h2> 
+<p class="blockquote"> 
+Kindly fill the following form to provide your experience regarding to our services.We 
+will constantly improvement of our services. 
+<br/><br/><br/> 
+
+</p> 
+<center> 
+<h2>Feedback Form:</h2> 
+<p align="center"> 
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse"> 
+<tr> 
+</tr> 
+<tr> 
+</tr> 
+<tr> 
+<td>First Name:</td> 
+<td><input type="text" value="" name="firstname"size="20" tabindex="1"/></td> 
+<td>Last Name:</td> 
+<td><input type="text" value="" name="lastname"size="20" tabindex="2"/></td> 
+<td>Mobile Number:</td> 
+<td><input type="text" value="" name="mobilenumber"size="20" maxlength="11" 
+tabindex="3"/></td> 
+</tr> 
+<tr> 
+<td>E-Mail Address:</td> 
+<td><input type="text" value="" name="emailaddress" size="25" 
+tabindex="4"/></td> 
+</tr> 
+<tr> 
+<td>Feedback/Suggestion:</td> 
+<td><textarea name="feedsugg" cols="25" rows="4" 
+tabindex="5"></textarea></td> 
+</tr> 
+<tr> 
+<td>Complaint:</td> 
+
+<td><textarea name="complaint" cols="25" rows="4" 
+tabindex="6"></textarea></td> 
+</tr> 
+<tr> 
+<td align="center"><input type="submit"value="Submit" name="submit" 
+tabindex="7"/></td> 
+<td align="center"><input type="reset" value="Reset" name="reset" 
+tabindex="8"/></td> 
+</tr> 
+</center> 
+</table> 
+</p> 
+<jsp:include page="Footer.jsp"></jsp:include> 
+</form> 
+<!-- java Script begins --> 
+<script language="JavaScript" type="text/javascript"> 
+var frmvalidator  = new Validator("feedback"); 
+frmvalidator.addValidation("firstname","req","First Name can't be left blank"); 
+frmvalidator.addValidation("firstname","alphabetic"); 
+frmvalidator.addValidation("lastname","req", "Last Name can't be left blank"); 
+frmvalidator.addValidation("lastname","alphabetic"); 
+frmvalidator.addValidation("mobilenumber","req", "Mobile number can't be left blank"); 
+frmvalidator.addValidation("mobilenumber","maxlen=11"); 
+frmvalidator.addValidation("mobilenumber","minlen=10"); 
+frmvalidator.addValidation("mobilenumber","numeric","Mobile Number should be in 
+numeric"); 
+
+frmvalidator.addValidation("emailaddress","maxlen=50"); 
+frmvalidator.addValidation("emailaddress","email"); 
+frmvalidator.addValidation("feedsugg","maxlen=150","Feedback & Suggesstions must be 
+within 150 characters."); 
+frmvalidator.addValidation("complaint","maxlen=150","Complaint must be within 150 
+characters."); 
+</script> 
+</body> 
+</html>
